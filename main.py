@@ -25,8 +25,7 @@ with st.sidebar:  # 添加一个按钮，点击后重新设置会话状态
     st.markdown('<p style="color:green; font-size: 24px;">更换文档后请刷新（按F5）后再提问</p>', unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("上传你的文件，支持Word，Excel，PowerPoint，pdf，txt：", type=["pdf", "txt", "docx", "pptx", "xlsx"])
-question = st.text_input("对文档的内容进行提问,按回车键结束 
-\n 示例：'这份文件的主题是什么？'，'根据这份文件，写一份项目计划。'", disabled=not uploaded_file)
+question = st.text_input("对文档的内容进行提问,按回车键结束       \n 示例：'这份文件的主题是什么？'，'根据这份文件，写一份项目计划。'", disabled=not uploaded_file)
 
 if uploaded_file and question and not openai_api_key:
     st.info("请输入你的OpenAI API密钥")
