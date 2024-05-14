@@ -47,7 +47,7 @@ def qa_agent(selected_model, openai_api_key, memory, uploaded_file, question):
     texts = text_splitter.split_documents(docs)
 
     # 建立文本的向量嵌入并创建快速检索系统
-    embeddings_model = OpenAIEmbeddings()
+    embeddings_model = OpenAIEmbeddings(model='text-embedding-3-small')
     db = FAISS.from_documents(texts, embeddings_model)
     retriever = db.as_retriever()
 
