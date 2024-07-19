@@ -10,7 +10,7 @@ with st.sidebar:
     openai_api_key = st.text_input("请输入OpenAI API密钥：", type="password")
     st.markdown("[获取OpenAI API key](https://platform.openai.com/account/api-keys)")
     st.subheader('请选择所要使用的模型')
-    selected_model = st.sidebar.selectbox('选择一个模型', ['gpt-4o mini'],
+    selected_model = st.sidebar.selectbox('选择一个模型', ['gpt-4o-mini'],
                                           key='selected_model')
 
 if "memory" not in st.session_state:
